@@ -41,7 +41,7 @@ public class Leetcode234_IsPalindromeListNode {
         slow.next = null;
         slow = head;
         fast = reverseNode(fast);
-        // 这里的话偶数的话两者一起到结束位置，奇数的话此时slow会多出一个
+        // 开始比对，只要不相等就返回false
         while (fast != null) {
             if (slow.val != fast.val) return false;
             fast = fast.next;
@@ -50,6 +50,9 @@ public class Leetcode234_IsPalindromeListNode {
         return true;
     }
 
+    /**
+     * 非递归版本
+     */
     public ListNode reverseNode(ListNode head) {
         if (head == null || head.next == null) return head;
         ListNode p = null;
@@ -60,5 +63,16 @@ public class Leetcode234_IsPalindromeListNode {
             head = temp;
         }
         return p;
+    }
+
+    /**
+     * 递归版本
+     */
+    public ListNode recurseNode(ListNode head){
+        if(head == null || head.next == null) return head;
+        ListNode node = recurseNode(head.next);
+        head.next.next = head;
+        head.next = null;
+        return node;
     }
 }
