@@ -7,6 +7,8 @@ import java.util.LinkedList;
  * @author caoduanxi
  * @Date 2021/3/13 19:25
  * @Motto Keep thinking, keep coding!
+ * leetcode 705、设计哈希集合
+ * 题目：https://leetcode-cn.com/problems/design-hashset/
  */
 public class Leetcode705_MyHashSet {
 }
